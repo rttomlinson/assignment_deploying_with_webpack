@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack --progress -p",
     "start": "./node_modules/.bin/webpack-dev-server --port $PORT --host $IP --config webpack.config.js --inline --hot",
-    "postbuild": "node ./server.js"
+    "postbuild": "node ./server.js",
+    "nodemon": "./node_modules/.bin/nodemon",
+    "jasmine": "npm run nodemon --exec ./node_modules/.bin/jasmine"
   },
   "repository": {
     "type": "git",
@@ -22,12 +24,16 @@
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.2",
+    "deep-freeze": "0.0.1",
     "file-loader": "^0.11.1",
+    "jasmine-es6": "^0.4.0",
+    "nodemon": "^1.11.0",
     "style-loader": "^0.18.1",
     "webpack": "^2.6.0",
     "webpack-dev-server": "^2.4.5"
@@ -35,10 +41,14 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.15.3",
+    "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0"
   },
   "engines": {
-      "node": "^7.8.0"
+    "node": "^7.8.0"
   }
 }
